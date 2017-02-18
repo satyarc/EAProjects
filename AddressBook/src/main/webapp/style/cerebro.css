@@ -1,0 +1,132 @@
+body {
+  background-color: #f4f4f4;
+  color: #5a5656;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+h1, p {
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: bold;
+}
+.uppercase { text-transform: uppercase; }
+
+/* ---------- LOGIN ---------- */
+#login {
+  margin: 50px auto;
+  width: 600px;
+  height: 400px;
+}
+
+form fieldset input[type="text"], input[type="password"] {
+  background-color: #e5e5e5;
+  border: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #5a5656;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  height: 50px;
+  outline: none;
+  padding: 0px 10px;
+  width: 280px;
+  -webkit-appearance:none;
+}
+
+form fieldset input[type="submit"] {
+  background-color: #008dde;
+  border: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #f4f4f4;
+  cursor: pointer;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  height: 50px;
+  text-transform: uppercase;
+  width: 300px;
+  -webkit-appearance:none;
+}
+
+form fieldset a {
+  color: #5a5656;
+  font-size: 10px;
+}
+
+form fieldset a:hover { text-decoration: underline; }
+
+.btn-round {
+  background-color: #5a5656;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #f4f4f4;
+  display: block;
+  font-size: 12px;
+  height: 50px;
+  line-height: 50px;
+  margin: 30px 125px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 50px;
+}
+/*-------------------------User.css--------------------------*/
+<style>
+  label, input { display:block; }
+  input.text { margin-bottom:12px; width:95%; padding: .4em; }
+  fieldset { padding:0; border:0; margin-top:25px; }
+  h1 { font-size: 1.2em; margin: .6em 0; }
+  div#deployments-contain { width: 350px; margin: 20px 0; }
+  div#deployments-contain table {
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 100%;h
+  }
+  div#deployments-contain table td, div#deployments-contain table th {
+    border: 1px solid #eee;
+    padding: .6em 10px;
+    text-align: left;
+  }
+  .ui-dialog .ui-state-error { padding: .3em; }
+  .validateTips { border: 1px solid transparent; padding: 0.3em; }
+</style>
+
+body {
+  font-family:verdana,arial,sans-serif;
+  font-size:5pt;
+  margin:30px;
+  background-color:#696969;
+  padding-top: 120px;
+}
+
+div.container {
+  width: 40%;
+  border: 1px solid gray;
+}
+
+table {
+  border:none;
+  border-collapse: collapse;
+}
+
+table td {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+table td:first-child {
+  border-left: none;
+}

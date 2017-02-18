@@ -1,0 +1,26 @@
+
+<div class="container">
+    <div id="content-wrap">
+	<div style="background-image:url(./assets/logo_background_big.svg);width:300px;height:200px;color:black;font-size:18px;padding:150px;">
+		<form id="addressDetails">
+		   <table>
+				<tr>
+					<td>
+						<table width="100%">	
+						<tr bgcolor="yellow" ><td><input type="checkbox"  ng-click="toggleAll()" ng-model="isAllSelected"></td><td>NAME</td><td>ADDRESS</td><td>PHONE</td></tr>
+							<tr bgcolor="white" ng-repeat = "address in addresses">
+								<td><input type="checkbox" ng-model="option.selected" ng-change="optionToggled()"></td><td>{{address.name}}</td><td>{{address.address}}</td><td>{{address.phone}}</td>
+							</tr>
+						<tr>
+							<td><input type="button" style="color:red" ng-click="addAddresses()" value="Add" ></<input></td>
+							<td><input type="button" style="color:red" ng-click="deleteAddresses()" value="Delete" ></<input></td>
+						</tr>
+						</table>
+					</td>			
+				</tr>
+		   </table>
+		</form>
+	</div>
+</div>
+<div id="footer">Footer</div>
+</div>
