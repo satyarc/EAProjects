@@ -7,13 +7,14 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-//import com.nmbr.mna.pharma.entity.UserDetail;
-
 
 import com.addressbook.entity.Home;
 import com.addressbook.entity.PharmaRepository;
@@ -26,6 +27,9 @@ public class UserController {
 	@Autowired
 	PharmaRepository phaRepos;
 	
+	EntityManagerFactory emf=Persistence.createEntityManagerFactory("jpa");
+	EntityManager em=emf.createEntityManager();
+	
 	Gson gson = new GsonBuilder().create();
 	
 	@RequestMapping("/addresses")
@@ -36,10 +40,19 @@ public class UserController {
 	
 	@RequestMapping("/addAddress")
 	public @ResponseBody String addAddress(String input){
-		List<Home> addresses =  (List<Home>)phaRepos.findAll();
+
 		Addressfields fields =  gson.fromJson(input, Addressfields.class);
-		//phaRepos.save(fields.name);
-		return "Added" + fields.name + fields.address + fields.phone;
+		try{
+		      EntityTransaction transaction=em.getTransaction();
+		      transaction.begin();
+		      em.persist(fields);
+		      transaction.commit();
+	    }
+	    finally{
+	      em.close();
+	    }
+		List<Home> addresses =  (List<Home>)phaRepos.findAll();
+		return "Added" + gson.toJson(addresses);
 	}
 	
 	@RequestMapping("/deleteAddress")
