@@ -33,7 +33,7 @@ cerebroUIApp.controller('DashboardController', function($scope, $rootScope, $htt
 			location.href="#/dashBoard";
 		}
 		
-		$scope.addAddresses = function(){
+		$scope.addAddressPage = function(){
 			location.href="#/addAddress";
 		}
 });

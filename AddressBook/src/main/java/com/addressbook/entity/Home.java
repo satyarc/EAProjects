@@ -2,26 +2,36 @@ package com.addressbook.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
  * The persistent class for the "HOME" database table.
  * 
  */
+@XmlRootElement
 @Entity
 @Table(name="\"HOME\"")
 @NamedQuery(name="HOME.findAll", query="SELECT h FROM Home h")
 public class Home implements Serializable {
+	@JsonIgnore
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue
 	@Column(name="home_id")
 	private Integer homeId;
 
+	@XmlElement
 	private String address;
 
+	@XmlElement
 	private String name;
 
+	@XmlElement
 	private String phone;
 
 	public Home() {
