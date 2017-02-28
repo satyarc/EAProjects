@@ -45,8 +45,8 @@ public class UserController {
 	@RequestMapping(value = "/addAddressS", method = RequestMethod.POST )
 	public @ResponseBody String addAddress(@RequestBody  Home  home){
 		phaRepos.save(home);
-		List<Home> addresses  =  (List<Home>)phaRepos.findAll();
-		String response = gson.toJson(addresses);
+		List<Home>addresses  =  (List<Home>)phaRepos.findAll();
+		String response = gson.toJson(addresses); 
 		return  response;
 	}
 	
